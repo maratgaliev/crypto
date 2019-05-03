@@ -1,0 +1,5 @@
+en:
+  errors:
+    base: try again later
+    encrypted_strings:
+      not_found: "No entry found for token %{token}"

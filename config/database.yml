@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: crypto_development
+
+test:
+  <<: *default
+  database: crypto_test
+
+production:
+  <<: *default
+  database: crypto_production
+  username: crypto
+  password: <%= ENV['CRYPTO_DATABASE_PASSWORD'] %>

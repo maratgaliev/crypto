@@ -1,0 +1,15 @@
+language: ruby
+rvm:
+  - 2.5.1
+addons:
+  postgresql: '9.5'
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database hiclock_test;' -U postgres
+env:
+  - RAILS_ENV=test
+  - RAILS_VERSION=5.2.2
+script:
+  - RAILS_ENV=test bundle exec rake db:migrate --trace
+  - bundle exec rspec
