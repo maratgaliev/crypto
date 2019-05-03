@@ -1,4 +1,7 @@
 language: ruby
+before_script:
+  - bundle exec sidekiq
+  - sleep 1
 rvm:
   - 2.5.1
 addons:
@@ -7,6 +10,7 @@ services:
   - postgresql
   - redis-server
 before_script:
+  - gem install bundler
   - psql -c 'create database crypto_test;' -U postgres
 env:
   - RAILS_ENV=test
