@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/maratgaliev/crypto.svg?branch=master)](https://travis-ci.org/maratgaliev/crypto)
+
 ## API documentation
 
 ### Returns list of encrypted string with tokens
