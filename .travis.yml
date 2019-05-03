@@ -11,7 +11,7 @@ services:
   - redis-server
 before_script:
   - psql -c 'create database crypto_test;' -U postgres
-  - bundle exec sidekiq
+  - bundle exec sidekiq &
   - sleep 1
 env:
   - RAILS_ENV=test
