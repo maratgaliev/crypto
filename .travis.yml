@@ -6,11 +6,13 @@ rvm:
   - 2.5.1
 addons:
   postgresql: '9.5'
+before_install:
+  - gem uninstall -v '>= 2' -i $(rvm gemdir)@global -ax bundler || true
+  - gem install bundler -v '< 2'
 services:
   - postgresql
   - redis-server
 before_script:
-  - gem install bundler
   - psql -c 'create database crypto_test;' -U postgres
 env:
   - RAILS_ENV=test
